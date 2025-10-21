@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel El Cricko - Contacto | Komercia</title>
+
+    <!-- Bootstrap -->
+    <link href="/assets/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/libs/bootstrap-icons/bootstrap-icons.css">
+    <!-- Librerías de animación -->
+    <link href="/assets/libs/aos/aos.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/comercio_detalle.css">
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header class="header fixed-top">
+        <div class="container py-3">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand d-flex align-items-center" href="../index.html">
+                    <div class="section-icon">
+                        <i class="bi bi-shop"></i>
+                    </div>
+                    <span class="ms-2 fw-bold">Komercia</span>
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav align-items-center gap-2">
+                        <li class="nav-item">
+                            <a href="../index.html" class="nav-link">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/landing/comercio_categoria.html" class="nav-link active">Comercios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="btn btn-primary-custom">Ingresar</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main style="margin-top: 96px;">
+        <!-- SEARCHER -->
+        <section class="search-section py-5" data-aos="fade-up">
+            <div class="container">
+                <div class="search-wrapper">
+                    <i class="bi bi-search search-icon-left"></i>
+                    <input type="text" class="form-control search-input"
+                        placeholder="Buscar comercios, productos o servicios...">
+                    <button class="btn btn-search">
+                        <i class="bi bi-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- DETALLE DEL COMERCIO -->
+        <section class="detail-section py-5">
+            <div class="container">
+                <h3 class="fw-bold mb-3" data-aos="fade-up">Hotel El Cricko</h3>
+
+                <nav aria-label="breadcrumb" class="mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="../index.html">Inicio</a></li>
+                        <li class="breadcrumb-item"><a href="/landing/comercio_categoria.html">Hoteles</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Contacto</li>
+                    </ol>
+                </nav>
+
+                <!-- Main Image -->
+                <div class="mb-4" data-aos="fade-up" data-aos-delay="150">
+                    <div class="main-img-container">
+                        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1200"
+                            alt="Hotel El Cricko" class="main-img">
+                    </div>
+                </div>
+
+                <!-- Tab navigation -->
+                <ul class="nav nav-tabs mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <li class="nav-item"><a class="nav-link" href="/landing/comercio_info.html">Información</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/landing/comercio_product.html">Productos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/landing/comercio_gallery.html">Galería</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="/landing/comercio_contact.html">Contacto</a></li>
+                </ul>
+
+                <!-- CONTACTO -->
+                <div class="contact-section mb-5">
+                    <h5 class="fw-bold mb-3" data-aos="fade-up" data-aos-delay="250">Contáctanos</h5>
+                    <p data-aos="fade-up" data-aos-delay="300">
+                        Utilice el siguiente formulario para enviar un mensaje a <strong>Hotel El Cricko</strong> y con
+                        gusto le atenderemos.
+                    </p>
+
+                    <form class="contact-form needs-validation" novalidate data-aos="fade-up" data-aos-delay="350">
+                        <div class="row g-4">
+                            <!-- Columna izquierda -->
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="nombre" class="form-label">Nombre *</label>
+                                    <input type="text" class="form-control" id="nombre" name="nombre"
+                                        placeholder="Tu nombre completo" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="telefono" class="form-label">Teléfono *</label>
+                                    <input type="tel" class="form-control" id="telefono" name="telefono"
+                                        placeholder="8888-8888" pattern="[0-9]{8,15}" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="correo" class="form-label">Correo Electrónico *</label>
+                                    <input type="email" class="form-control" id="correo" name="correo"
+                                        placeholder="tu@email.com" required>
+                                </div>
+                            </div>
+
+                            <!-- Columna derecha -->
+                            <div class="col-md-6">
+                                <div class="form-group h-100">
+                                    <label for="mensaje" class="form-label">Mensaje *</label>
+                                    <textarea class="form-control h-100" id="mensaje" name="mensaje" rows="8"
+                                        placeholder="Escribe tu mensaje aquí..." required></textarea>
+                                </div>
+                            </div>
+
+                            <!-- Botón -->
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-submit">
+                                    Enviar Mensaje
+                                    <i class="bi bi-send ms-2"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+   <!-- FOOTER -->
+    <footer class="footer" data-aos="fade-up">
+        <div class="container">
+            <div class="row gy-4 justify-content-between align-items-start">
+                <!-- Columna 1: Marca y descripción -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-brand d-flex align-items-center mb-3">
+                        <div class="section-icon">
+                        <i class="bi bi-shop"></i>
+                    </div>
+                        <span class="ms-2 fw-bold fs-5">Komercia</span>
+                    </div>
+                    <p class="footer-description mb-0">
+                        Conectando negocios locales con toda la comunidad.<br>
+                        Descubre, apoya y conecta con comercios en tu ciudad.
+                    </p>
+                </div>
+
+                <!-- Columna 2: Enlaces -->
+                <div class="col-4 col-md-3 col-lg-2">
+                    <h6 class="footer-heading">Enlaces</h6>
+                    <ul class="footer-links">
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#">Comercios</a></li>
+                        <li><a href="#">Categorías</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 3: Soporte -->
+                <div class="col-4 col-md-3 col-lg-2">
+                    <h6 class="footer-heading">Soporte</h6>
+                    <ul class="footer-links">
+                        <li><a href="#">Ayuda</a></li>
+                        <li><a href="#">Contacto</a></li>
+                        <li><a href="#">Términos</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr class="footer-divider my-4">
+
+            <!-- Créditos -->
+            <div class="footer-bottom text-center">
+                <p class="mb-1">&copy; 2025 Komercia. Todos los derechos reservados.</p>
+                <p class="developers mb-0">
+                    Desarrollado por
+                    <a href="https://github.com/AaronMatarrita" target="_blank"><i class="bi bi-github"></i> Aaron
+                        Matarrita</a>,
+                    <a href="https://github.com/A-BrionesVargas" target="_blank"><i class="bi bi-github"></i> Daniel
+                        Briones</a>,
+                    <a href="https://github.com/JosuePorras" target="_blank"><i class="bi bi-github"></i> Josue
+                        Porras</a> y
+                    <a href="https://github.com/YeilerMR" target="_blank"><i class="bi bi-github"></i> Yeiler Montes</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="/assets/libs/jquery/jquery-3.6.4.min.js"></script>
+    <!-- AOS -->
+    <script src="/assets/libs/aos/aos.js"></script>
+    <!-- Script principal -->
+    <script src="/assets/js/main.js"></script>
+    <script>
+        // Validación Bootstrap
+        (() => {
+            'use strict';
+            const forms = document.querySelectorAll('.needs-validation');
+            Array.from(forms).forEach(form => {
+                form.addEventListener('submit', event => {
+                    if (!form.checkValidity()) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        })();
+    </script>
+</body>
+
+</html>

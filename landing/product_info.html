@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Directorio Comercio | Hotel El Cricko</title>
+
+    <!-- Bootstrap -->
+    <link href="/assets/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/libs/bootstrap-icons/bootstrap-icons.css">
+    <!-- Librerías de animación -->
+    <link href="/assets/libs/aos/aos.css" rel="stylesheet">
+    <!-- Fancybox -->
+    <link rel="stylesheet" href="/assets/libs/fancybox/jquery.fancybox.css">
+    <!-- Slick -->
+    <link rel="stylesheet" href="/assets/libs/slick/slick.css">
+    <link rel="stylesheet" href="/assets/libs/slick/slick-theme.css">
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/comercio_detalle.css">
+
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header class="header fixed-top">
+        <div class="container py-3">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand d-flex align-items-center" href="index.html">
+                    <div class="section-icon">
+                        <i class="bi bi-shop"></i>
+                    </div>
+                    <span class="ms-2 fw-bold">Komercia</span>
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav align-items-center gap-2">
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="comercio_category.html" class="nav-link active">Comercios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="btn btn-primary-custom">Ingresar</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main style="margin-top: 96px;">
+        <!-- SEARCHER -->
+        <section class="search-section py-5" data-aos="fade-up">
+            <div class="container">
+                <div class="search-wrapper">
+                    <i class="bi bi-search search-icon-left"></i>
+                    <input type="text" class="form-control search-input"
+                        placeholder="Buscar comercios, productos o servicios...">
+                    <button class="btn btn-search">
+                        <i class="bi bi-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRODUCT DETAIL -->
+        <section class="detail-section">
+            <div class="container">
+                <div class="product-header mb-2">
+                    <button class="btn-back" onclick="window.history.back()" data-aos="fade-up" data-aos-delay="100">
+                        <i class="bi bi-arrow-left-circle me-1"></i> Regresar
+                    </button>
+                    <h1 class="fw-bold mb-0 text-uppercase product-title" data-aos="fade-up" data-aos-delay="150">
+                        Producto 1</h1>
+                </div>
+                <!-- BREADCRUMB -->
+                <nav aria-label="breadcrumb" class="mb-5" data-aos="fade-up" data-aos-delay="150">
+                    <ol class="breadcrumb small">
+                        <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+                        <li class="breadcrumb-item"><a href="#">Categorías</a></li>
+                        <li class="breadcrumb-item"><a href="#">Hoteles</a></li>
+                        <li class="breadcrumb-item"><a href="comercio_info.html">Hotel El Cricko</a></li>
+                        <li class="breadcrumb-item"><a href="comercio_product.html">Productos</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Producto 1</li>
+                    </ol>
+                </nav>
+
+                <!-- CONTENIDO PRINCIPAL -->
+                <div class="row align-items-start mb-5 gy-4">
+                    <!-- Imagen Principal -->
+                    <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                        <div class="main-img-container">
+                            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1200"
+                                alt="Hotel El Cricko" class="main-img">
+                        </div>
+                    </div>
+
+                    <!-- Descripción -->
+                    <div class="col-md-6" data-aos="fade-left" data-aos-delay="250">
+                        <h4 class="fw-bold mb-3">Descripción</h4>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat.
+                        </p>
+                        <p><strong>Precio:</strong> ₡15,000</p>
+                        <p><strong>Comercio:</strong> Hotel El Cricko</p>
+                    </div>
+                </div>
+
+                <!-- GALERÍA -->
+                <div class="gallery-section" data-aos="fade-up" data-aos-delay="300">
+                    <h5 class="fw-bold mb-4">Galería de Imágenes</h5>
+                    <div class="row g-3">
+                        <!-- Imagen 1 -->
+                        <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                            <a data-fancybox="galeria" data-caption="Lobby del Hotel"
+                                href="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800">
+                                <div class="gallery-item">
+                                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400"
+                                        alt="Lobby del Hotel" class="gallery-img">
+                                    <div class="gallery-overlay">
+                                        <i class="bi bi-zoom-in"></i>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Imagen 2 -->
+                        <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="350">
+                            <a data-fancybox="galeria" data-caption="Habitación Deluxe"
+                                href="https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=800">
+                                <div class="gallery-item">
+                                    <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=400"
+                                        alt="Habitación Deluxe" class="gallery-img">
+                                    <div class="gallery-overlay">
+                                        <i class="bi bi-zoom-in"></i>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Imagen 3 -->
+                        <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+                            <a data-fancybox="galeria" data-caption="Piscina"
+                                href="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800">
+                                <div class="gallery-item">
+                                    <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=400"
+                                        alt="Piscina" class="gallery-img">
+                                    <div class="gallery-overlay">
+                                        <i class="bi bi-zoom-in"></i>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Imagen 4 -->
+                        <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="450">
+                            <a data-fancybox="galeria" data-caption="Restaurante"
+                                href="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800">
+                                <div class="gallery-item">
+                                    <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400"
+                                        alt="Restaurante" class="gallery-img">
+                                    <div class="gallery-overlay">
+                                        <i class="bi bi-zoom-in"></i>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Imagen 5 -->
+                        <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="500">
+                            <a data-fancybox="galeria" data-caption="Spa"
+                                href="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800">
+                                <div class="gallery-item">
+                                    <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=400"
+                                        alt="Spa" class="gallery-img">
+                                    <div class="gallery-overlay">
+                                        <i class="bi bi-zoom-in"></i>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Imagen 6 -->
+                        <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="550">
+                            <a data-fancybox="galeria" data-caption="Vista Exterior"
+                                href="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=800">
+                                <div class="gallery-item">
+                                    <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=400"
+                                        alt="Vista Exterior" class="gallery-img">
+                                    <div class="gallery-overlay">
+                                        <i class="bi bi-zoom-in"></i>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer" data-aos="fade-up">
+        <div class="container">
+            <div class="row gy-4 justify-content-between align-items-start">
+                <!-- Columna 1: Marca y descripción -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-brand d-flex align-items-center mb-3">
+                        <div class="section-icon">
+                        <i class="bi bi-shop"></i>
+                    </div>
+                        <span class="ms-2 fw-bold fs-5">Komercia</span>
+                    </div>
+                    <p class="footer-description mb-0">
+                        Conectando negocios locales con toda la comunidad.<br>
+                        Descubre, apoya y conecta con comercios en tu ciudad.
+                    </p>
+                </div>
+
+                <!-- Columna 2: Enlaces -->
+                <div class="col-4 col-md-3 col-lg-2">
+                    <h6 class="footer-heading">Enlaces</h6>
+                    <ul class="footer-links">
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#">Comercios</a></li>
+                        <li><a href="#">Categorías</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 3: Soporte -->
+                <div class="col-4 col-md-3 col-lg-2">
+                    <h6 class="footer-heading">Soporte</h6>
+                    <ul class="footer-links">
+                        <li><a href="#">Ayuda</a></li>
+                        <li><a href="#">Contacto</a></li>
+                        <li><a href="#">Términos</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr class="footer-divider my-4">
+
+            <!-- Créditos -->
+            <div class="footer-bottom text-center">
+                <p class="mb-1">&copy; 2025 Komercia. Todos los derechos reservados.</p>
+                <p class="developers mb-0">
+                    Desarrollado por
+                    <a href="https://github.com/AaronMatarrita" target="_blank"><i class="bi bi-github"></i> Aaron
+                        Matarrita</a>,
+                    <a href="https://github.com/A-BrionesVargas" target="_blank"><i class="bi bi-github"></i> Daniel
+                        Briones</a>,
+                    <a href="https://github.com/JosuePorras" target="_blank"><i class="bi bi-github"></i> Josue
+                        Porras</a> y
+                    <a href="https://github.com/YeilerMR" target="_blank"><i class="bi bi-github"></i> Yeiler Montes</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="/assets/libs/jquery/jquery-3.6.4.min.js"></script>
+    <!-- Slick JS -->
+    <script src="/assets/libs/slick/slick.min.js"></script>
+    <!-- AOS, GSAP, Fancybox, Slick -->
+    <script src="/assets/libs/aos/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="/assets/libs/fancybox/fancybox.umd.js"></script>
+    <script src="/assets/libs/slick/slick.min.js"></script>
+    <!-- script principal -->
+    <script src="/assets/js/main.js"></script>
+
+</body>
+
+</html>

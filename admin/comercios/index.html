@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Komercia | Comercios</title>
+
+    <!-- Bootstrap -->
+    <link href="/assets/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/libs/bootstrap-icons/bootstrap-icons.css">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.3/css/dataTables.bootstrap5.min.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/3.0.2/css/responsive.bootstrap5.min.css" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Estilos generales -->
+    <link rel="stylesheet" href="/assets/css/admin.css">
+    <!-- Estilos específicos de la página -->
+    <link rel="stylesheet" href="/assets/css/admin_comercios.css">
+</head>
+
+<body>
+    <div class="d-flex min-vh-100">
+
+        <!-- Sidebar -->
+        <aside class="sidebar d-flex flex-column border-end">
+            <button class="btn-close-sidebar d-lg-none" id="closeSidebar">
+                <i class="bi bi-x-lg"></i>
+            </button>
+            <!-- Brand -->
+            <div class="px-3 py-4 d-flex align-items-center gap-2 sidebar-brand border-bottom">
+                <div class="brand-icon">
+                    <i class="bi bi-shop"></i>
+                </div>
+                <div class="brand-text">
+                    <div class="fw-bold">Komercia</div>
+                    <small class="text-secondary">Panel Admin</small>
+                </div>
+            </div>
+
+            <!-- NAV LINKS -->
+            <nav class="px-3 mt-2 d-flex flex-column gap-1 sidebar-links">
+                <a href="#" class="sidebar-link active">
+                    <i class="bi bi-speedometer2"></i><span>Dashboard</span>
+                </a>
+                <a href="#" class="sidebar-link">
+                    <i class="bi bi-shop"></i><span>Comercios</span>
+                </a>
+                <a href="#" class="sidebar-link">
+                    <i class="bi bi-tag"></i><span>Categorías</span>
+                </a>
+                <a href="#" class="sidebar-link">
+                    <i class="bi bi-images"></i><span>Slider</span>
+                </a>
+            </nav>
+
+            <!-- Spacer -->
+            <div class="flex-grow-1"></div>
+
+            <!-- Logout -->
+            <div class="px-3 py-3">
+                <button type="button" class="btn-logout w-100 d-flex align-items-center justify-content-center gap-2">
+                    <i class="bi bi-box-arrow-right"></i> <span>Cerrar sesión</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main -->
+        <div class="main flex-grow-1 d-flex flex-column">
+
+            <!-- Topbar -->
+            <header class="topbar d-flex align-items-center justify-content-between px-3 border-bottom">
+                <button class="btn btn-icon d-inline-flex align-items-center justify-content-center" id="sidebarToggle">
+                    <i class="bi bi-list fs-5"></i>
+                </button>
+                <div class="d-flex align-items-center gap-2">
+                    <div class="user-avatar" id="userInitials"></div>
+                </div>
+            </header>
+
+            <!-- Contenido principal -->
+            <main class="content-wrapper flex-grow-1">
+                <div class="container-fluid py-3 py-md-4">
+                    <!-- DataTales Example -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Position</th>
+                                            <th>Office</th>
+                                            <th>Age</th>
+                                            <th>Start date</th>
+                                            <th>Salary</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Tiger Nixon</td>
+                                            <td>System Architect</td>
+                                            <td>Edinburgh</td>
+                                            <td>61</td>
+                                            <td>2011/04/25</td>
+                                            <td>$320,800</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </main>
+
+            <footer class="admin-footer text-center border-top py-3 px-3">
+                © 2025 Komercia · Panel Administrativo
+            </footer>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="/assets/libs/jquery/jquery-3.6.4.min.js"></script>
+    <!-- DataTables -->
+    <script src="/assets/libs/datatables/datatables.min.js"></script>
+
+    <script>
+        // Inicializar usuario
+        const userName = "Aaron Matarrita";
+        const initials = userName.trim().split(/\s+/).map(n => n[0]).join("").toUpperCase().slice(0, 3);
+        document.getElementById("userInitials").textContent = initials;
+
+        // Sidebar
+        const sidebar = document.querySelector(".sidebar");
+        const main = document.querySelector(".main");
+        document.getElementById("sidebarToggle").addEventListener("click", () => {
+            sidebar.classList.toggle("collapsed");
+            main.classList.toggle("expanded");
+        });
+        document.getElementById("closeSidebar").addEventListener("click", () => {
+            sidebar.classList.remove("collapsed");
+        });
+
+        // DataTable
+        new DataTable('#tablaComercios', {
+            responsive: true,
+            language: {
+                url: '//cdn.datatables.net/plug-ins/2.0.3/i18n/es-ES.json'
+            },
+            columnDefs: [
+                { orderable: false, targets: -1 }
+            ]
+        });
+    </script>
+</body>
+
+</html>
