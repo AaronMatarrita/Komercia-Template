@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Komercia | Panel Admin</title>
+
+    <!-- Bootstrap -->
+    <link href="/assets/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/libs/bootstrap-icons/bootstrap-icons.css">
+    <!-- Librerías de animación -->
+    <link href="/assets/libs/aos/aos.css" rel="stylesheet">
+    <!-- Slick -->
+    <link rel="stylesheet" href="/assets/libs/slick/slick.css">
+    <link rel="stylesheet" href="/assets/libs/slick/slick-theme.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Leaflet (mapa) -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/comercio_detalle.css">
+    <link rel="stylesheet" href="/assets/css/admin/admin.css">
+    <link rel="stylesheet" href="/assets/css/admin/form_style.css">
+</head>
+
+<body>
+
+    <div class="d-flex min-vh-100">
+        <!-- Sidebar -->
+        <aside class="sidebar d-flex flex-column border-end">
+            <button class="btn-close-sidebar d-lg-none" id="closeSidebar">
+                <i class="bi bi-x-lg"></i>
+            </button>
+            <!-- Brand -->
+            <div class="px-3 py-4 d-flex align-items-center gap-2 sidebar-brand border-bottom">
+                <div class="brand-icon">
+                    <i class="bi bi-shop"></i>
+                </div>
+                <div class="brand-text">
+                    <div class="fw-bold">Komercia</div>
+                    <small class="text-secondary">Panel Admin</small>
+                </div>
+            </div>
+
+            <!-- NAV LINKS -->
+            <nav class="px-3 mt-2 d-flex flex-column gap-1 sidebar-links">
+                <a href="/admin/index.html" class="sidebar-link">
+                    <i class="bi bi-speedometer2"></i><span>Dashboard</span>
+                </a>
+                <a href="/admin/comercios/comercios.html" class="sidebar-link">
+                    <i class="bi bi-shop"></i><span>Comercios</span>
+                </a>
+                <a href="/admin/categorias/categorias.html" class="sidebar-link">
+                    <i class="bi bi-tag"></i><span>Categorías</span>
+                </a>
+                <a href="/admin/slider/slider.html" class="sidebar-link active">
+                    <i class="bi bi-images"></i><span>Slider</span>
+                </a>
+            </nav>
+
+            <!-- Spacer -->
+            <div class="flex-grow-1"></div>
+
+            <!-- Logout -->
+            <div class="px-3 py-3">
+                <button type="button" class="btn-logout w-100 d-flex align-items-center justify-content-center gap-2">
+                    <i class="bi bi-box-arrow-right"></i> <span>Cerrar sesión</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main -->
+        <div class="main flex-grow-1 d-flex flex-column">
+            <!-- Topbar -->
+            <header class="topbar d-flex align-items-center justify-content-between px-3 border-bottom">
+                <button class="btn btn-icon d-inline-flex align-items-center justify-content-center" id="sidebarToggle"
+                    aria-label="Alternar menú">
+                    <i class="bi bi-list fs-5"></i>
+                </button>
+
+                <div class="d-flex align-items-center gap-2">
+                    <div class="user-avatar" id="userInitials" aria-label="Iniciales del usuario"></div>
+                </div>
+            </header>
+
+            <!-- Page content -->
+            <main class="content-wrapper flex-grow-1">
+                <div class="container-fluid py-3 py-md-4">
+
+                    <div class="d-flex align-items-center gap-2 mb-3">
+                        <a href="/admin/index.html" class="btn btn-light btn-back rounded-pill px-3">
+                            <i class="bi bi-arrow-left"></i>
+                        </a>
+                        <h1 class="h4 m-0 fw-bold">Nuevo Slider</h1>
+                    </div>
+
+                    <!-- Breadcrumb -->
+                    <nav aria-label="breadcrumb" class="mb-3">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/admin/index.html">Dashboard</a></li>
+                            <li class="breadcrumb-item"><a href="/admin/slider/slider.html">Slider</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Nuevo slide</li>
+                        </ol>
+                    </nav>
+
+                    <!-- FORM -->
+                    <form id="sliderForm" class="needs-validation" method="POST" enctype="multipart/form-data"
+                        novalidate>
+
+                        <!-- DATOS DEL SLIDER -->
+                        <section class="card-surface p-3 p-md-4 mb-3">
+                            <h6 class="section-heading">
+                                <i class="bi bi-images me-2"></i> Slider
+                            </h6>
+
+                            <div class="row g-3">
+                                <!-- TÍTULO -->
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="dsc_titulo" class="form-label">Título *</label>
+                                        <input type="text" class="form-control" id="dsc_titulo" name="dsc_titulo"
+                                            placeholder="Título principal del slider" required>
+                                        <div class="invalid-feedback">El título es obligatorio.</div>
+                                    </div>
+                                </div>
+
+                                <!-- SUBTÍTULO -->
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="dsc_subtitulo" class="form-label">Subtítulo (máx. 50
+                                            caracteres)</label>
+                                        <input type="text" class="form-control" id="dsc_subtitulo" name="dsc_subtitulo"
+                                            placeholder="Texto breve complementario (máx. 50)" maxlength="50">
+                                    </div>
+                                </div>
+
+                                <!-- ENLACE (100% DE ANCHO) -->
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label for="dsc_enlace" class="form-label">Enlace</label>
+                                        <input type="url" class="form-control" id="dsc_enlace" name="dsc_enlace"
+                                            placeholder="https://ejemplo.com">
+                                    </div>
+                                </div>
+
+                                <!-- IMAGEN -->
+                                <div class="col-12">
+                                    <div class="form-group mb-3">
+                                        <label class="form-label">Imagen *</label>
+                                        <div class="img-thumb" id="sliderThumb">
+                                            <i class="bi bi-image"></i>
+                                        </div>
+                                        <input class="form-control mt-2" type="file" id="sliderImage" name="dsc_imagen"
+                                            accept="image/*" required>
+                                        <small class="text-secondary">PNG/JPG, máx. 2MB — Ideal: 1920×600</small>
+                                        <div class="invalid-feedback">Selecciona una imagen para el slider.</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </section>
+
+                        <!-- ACCIONES -->
+                        <div class="d-flex justify-content-end gap-2">
+                            <button type="reset" class="btn btn-light">Cancelar</button>
+                            <button type="submit" class="btn btn-primary-custom">Guardar Slider</button>
+                        </div>
+
+                    </form>
+
+                </div>
+            </main>
+
+            <!-- Footer -->
+            <footer class="admin-footer text-center border-top py-3 px-3">
+                © 2025 Komercia · Panel Administrativo · Todos los derechos reservados
+            </footer>
+        </div>
+    </div>
+
+    <!-- Modal Categorías -->
+    <div class="modal fade" id="categoriesModal" tabindex="-1" aria-labelledby="categoriesModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="categoriesModalLabel"><i class="bi bi-tags me-2"></i>Seleccionar
+                        categorías</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-search"></i></span>
+                            <input type="text" id="categoriesSearch" class="form-control"
+                                placeholder="Buscar categoría...">
+                        </div>
+                    </div>
+                    <div id="categoriesList" class="categories-list"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="btnSaveCategories" class="btn btn-primary-custom">Guardar
+                        selección</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="/assets/libs/jquery/jquery-3.6.4.min.js"></script>
+    <!-- Core -->
+    <script src="/assets/js/admin/core/init.js"></script>
+    <!-- Modules -->
+    <script src="/assets/js/admin/modules/validation.js"></script>
+    <script src="/assets/js/admin/modules/imagePreview.js"></script>
+    <!-- Page -->
+    <script src="/assets/js/admin/pages/slider_form.js"></script>
+
+</body>
+
+</html>

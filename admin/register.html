@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Komercia | Crear cuenta</title>
+
+    <!-- Bootstrap -->
+    <link href="/assets/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/libs/bootstrap-icons/bootstrap-icons.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Estilos generales -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/admin/admin.css">
+    <link rel="stylesheet" href="/assets/css/admin/auth.css">
+</head>
+
+<body class="auth-bg">
+
+    <div class="auth-container">
+        <div class="auth-card">
+
+            <!-- Logo / Brand -->
+            <div class="text-center mb-3">
+                <div class="brand-icon-lg mb-2"><i class="bi bi-shop"></i></div>
+            </div>
+
+            <!-- Header -->
+            <div class="auth-header text-center mb-3">
+                <h5 class="fw-semibold mb-1">Registro de usuario</h5>
+                <p class="text-secondary small">Completa los datos para crear tu cuenta</p>
+            </div>
+
+            <!-- Form -->
+            <form class="needs-validation auth-form" novalidate>
+                <!-- Usuario -->
+                <div class="mb-3">
+                    <label class="form-label" for="username">Nombre de usuario</label>
+                    <input type="text" id="username" name="dsc_username" class="form-control"
+                        placeholder="Nombre de usuario" required>
+                    <div class="invalid-feedback">Este campo es obligatorio.</div>
+                </div>
+
+                <!-- Email -->
+                <div class="mb-3">
+                    <label class="form-label" for="email">Correo electrónico</label>
+                    <input type="email" id="email" name="dsc_correo" class="form-control"
+                        placeholder="ejemplo@correo.com" required>
+                    <div class="invalid-feedback">Ingresa un correo válido.</div>
+                </div>
+
+                <!-- Password -->
+                <div class="mb-3">
+                    <label class="form-label" for="password">Contraseña</label>
+                    <input type="password" id="password" name="dsc_contrasenha" class="form-control"
+                        placeholder="********" minlength="6" required>
+                    <div class="invalid-feedback">Mínimo 6 caracteres.</div>
+                </div>
+
+                <!-- Confirm Password -->
+                <div class="mb-3">
+                    <label class="form-label" for="passwordConfirm">Confirmar contraseña</label>
+                    <input type="password" id="passwordConfirm" class="form-control"
+                        placeholder="Vuelve a escribir la contraseña" required>
+                    <div class="invalid-feedback">Debe coincidir con la contraseña.</div>
+                </div>
+
+                <!-- Submit -->
+                <button type="submit" class="btn btn-primary-custom w-100">Crear Cuenta</button>
+            </form>
+
+            <!-- Footer -->
+            <div class="text-center mt-3">
+                <a href="/admin/login.html" class="auth-link">← Ya tengo cuenta</a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Validación Bootstrap + match de contraseñas
+        (() => {
+            'use strict';
+            const form = document.querySelector('.needs-validation');
+            form.addEventListener('submit', event => {
+                const pass = document.getElementById('password').value;
+                const passConfirm = document.getElementById('passwordConfirm').value;
+
+                if (!form.checkValidity() || pass !== passConfirm) {
+                    event.preventDefault();
+                    event.stopPropagation();
+
+                    if (pass !== passConfirm) {
+                        document.getElementById('passwordConfirm').setCustomValidity("No coincide");
+                    } else {
+                        document.getElementById('passwordConfirm').setCustomValidity("");
+                    }
+                }
+
+                form.classList.add('was-validated');
+            }, false);
+        })();
+    </script>
+</body>
+
+</html>

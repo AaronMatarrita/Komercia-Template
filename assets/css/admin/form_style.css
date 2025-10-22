@@ -1,0 +1,354 @@
+/* —— Encabezados —— */
+.section-heading {
+    font-weight: 800;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: .35rem;
+}
+
+/* Botón volver */
+.btn-back {
+    border: 1px solid var(--border-color);
+    background: var(--primary-color);
+    color: white;
+    padding: 0.6rem 1.4rem;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    border: none;
+    transition: all 0.2s ease;
+    box-shadow: var(--shadow-sm);
+}
+
+.featured-upload {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+}
+
+.featured-thumb {
+    width: 110px;
+    height: 110px;
+    background: #f3f3f3;
+    border: 1px dashed #ccc;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.featured-thumb i {
+    font-size: 2rem;
+    color: #aaa;
+}
+
+.featured-input {
+    flex: 1;
+}
+
+/* Dropzone */
+.dropzone {
+    border: 2px dashed var(--border-color);
+    border-radius: var(--radius-lg);
+    background: var(--background);
+    text-align: center;
+    padding: 2rem 1rem;
+    transition: border-color .2s ease, background .2s ease;
+}
+
+.dropzone .dz-icon {
+    font-size: 2rem;
+    color: var(--text-light);
+}
+
+.dropzone.is-dragover {
+    border-color: var(--primary-color);
+    background: rgba(255, 107, 53, .05);
+}
+
+/* Thumbs */
+.thumb-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: .75rem;
+}
+
+@media (max-width:1199.98px) {
+    .thumb-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+@media (max-width:991.98px) {
+    .thumb-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width:767.98px) {
+    .thumb-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width:575.98px) {
+    .thumb-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.thumb-item {
+    position: relative;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    background: #fff;
+    aspect-ratio: 1/1;
+}
+
+.thumb-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.thumb-item .thumb-remove {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(0, 0, 0, .55);
+    color: #fff;
+    display: grid;
+    place-items: center;
+}
+
+.thumb-item .thumb-remove:hover {
+    background: rgba(0, 0, 0, .8);
+}
+
+/* Tarjeta de producto */
+.product-card {
+    position: relative;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background: var(--surface);
+    box-shadow: var(--shadow-sm);
+}
+
+.product-card:hover {
+    box-shadow: var(--shadow-md);
+}
+
+.product-card>.btn.btn-sm.btn-outline-danger {
+    position: absolute;
+    top: .75rem;
+    right: .75rem;
+}
+
+/* Mapa */
+.mapbox {
+    width: 100%;
+    height: 320px;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+}
+
+/* Botón primario */
+.btn-primary-custom {
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    padding: .6rem 1rem;
+    transition: transform .15s ease, box-shadow .2s ease, background .2s ease;
+}
+
+.btn-primary-custom:hover {
+    background: var(--primary-hover);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+}
+
+/* —— Chips Categorías —— */
+.chips-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    min-height: 42px;
+    align-items: center;
+    border: 1px dashed var(--border-color);
+    border-radius: var(--radius-md);
+    padding: .5rem;
+    background: var(--background);
+}
+
+.chip {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    background: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 999px;
+    padding: .25rem .6rem;
+    font-size: .9rem;
+}
+
+.chip .chip-remove {
+    border: none;
+    background: transparent;
+    color: var(--text-light);
+    display: inline-grid;
+    place-items: center;
+    line-height: 1;
+}
+
+.chip .chip-remove:hover {
+    color: #000;
+}
+
+/* —— Modal Categorías —— */
+.categories-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: .5rem 1rem;
+    max-height: 55vh;
+    overflow: auto;
+}
+
+@media (max-width: 575.98px) {
+    .categories-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+.category-item {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: .5rem .75rem;
+    background: #fff;
+}
+
+.category-item input {
+    accent-color: var(--primary-color);
+}
+
+/* —— Tag Inputs (tel/emails) —— */
+.tag-input {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    min-height: 42px;
+    align-items: center;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: .5rem;
+    background: #fff;
+}
+
+.tag-input input {
+    border: none;
+    outline: none;
+    min-width: 160px;
+    flex: 1 0 160px;
+}
+
+.tag {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    background: var(--background);
+    border: 1px solid var(--border-color);
+    border-radius: 999px;
+    padding: .25rem .6rem;
+    font-size: .9rem;
+}
+
+.tag button {
+    border: none;
+    background: transparent;
+    color: var(--text-light);
+    display: inline-grid;
+    place-items: center;
+    line-height: 1;
+}
+
+.tag button:hover {
+    color: #000;
+}
+
+.tag-input.is-invalid {
+    border-color: #dc3545;
+    box-shadow: 0 0 0 .1rem rgba(220, 53, 69, .1);
+}
+
+.tag-input .hint {
+    width: 100%;
+    font-size: .85rem;
+    color: #dc3545;
+}
+
+.geo-group .btn-geocode {
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    padding: 0 .9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background .2s, transform .15s ease;
+}
+
+.geo-group .btn-geocode i {
+    font-size: 1rem;
+}
+
+.geo-group .btn-geocode:hover {
+    background: var(--primary-hover);
+    transform: translateY(-1px);
+}
+
+.geo-group .form-control {
+    border-radius: var(--radius-md) 0 0 var(--radius-md);
+}
+
+/* ——— IMG thumb ancho completo ——— */
+.img-thumb {
+    width: 100%;
+    height: 220px;
+    background: #f3f3f3;
+    border: 1px dashed #ccc;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.img-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Helpers */
+.text-secondary {
+    color: var(--text-light);
+}

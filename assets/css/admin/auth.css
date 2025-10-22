@@ -1,0 +1,139 @@
+/* ============================
+   AUTH GLOBAL LAYOUT
+   ============================ */
+.auth-bg,
+.auth-wrapper {
+    background: #f5f6fa;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+    padding: 20px;
+}
+
+.auth-container,
+.auth-card {
+    width: 100%;
+    max-width: 420px;
+}
+
+.auth-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 32px 26px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+    position: relative;
+}
+
+/* ============================
+   BRAND / HEADER
+   ============================ */
+.brand-icon-lg {
+    font-size: 46px;
+    color: var(--primary-color);
+}
+
+.auth-title {
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+.auth-subtitle {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+/* ============================
+   FORMS
+   ============================ */
+.auth-form .form-control,
+.auth-card .form-control {
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 0.95rem;
+}
+
+.auth-form .form-control:focus,
+.auth-card .form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(14, 110, 253, 0.12);
+    outline: none;
+}
+
+/* Submit button */
+.btn-primary-custom,
+.auth-submit {
+    width: 100%;
+    border-radius: 8px;
+    padding: 10px;
+    font-weight: 500;
+}
+
+.btn-primary-custom:hover {
+    opacity: 0.90;
+}
+
+/* ============================
+   LINKS
+   ============================ */
+.auth-link {
+    color: var(--primary-color);
+    font-size: 0.875rem;
+    text-decoration: none;
+}
+
+.auth-link:hover {
+    text-decoration: underline;
+}
+
+.auth-footer {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 0.85rem;
+}
+
+/* ============================
+   DIVIDER
+   ============================ */
+.auth-divider {
+    text-align: center;
+    position: relative;
+    margin: 20px 0;
+    font-size: 0.85rem;
+    color: #aaa;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+    content: "";
+    position: absolute;
+    width: 40%;
+    height: 1px;
+    background: #ddd;
+    top: 50%;
+}
+
+.auth-divider::before {
+    left: 0;
+}
+
+.auth-divider::after {
+    right: 0;
+}
+
+/* ============================
+   EXTRA PARA FORGOT PAGE
+   ============================ */
+.auth-header h1,
+.auth-header h5 {
+    margin-bottom: .3rem;
+    font-weight: 600;
+}
+
+.auth-header p {
+    font-size: 0.875rem;
+    margin-bottom: .8rem;
+    color: #555;
+}

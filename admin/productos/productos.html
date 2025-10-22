@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Komercia | Productos del Comercio</title>
+
+    <!-- Bootstrap -->
+    <link href="/assets/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/libs/bootstrap-icons/bootstrap-icons.css">
+
+    <!-- Estilos Admin -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/admin/admin.css">
+    <link rel="stylesheet" href="/assets/css/admin/form_style.css">
+    <link rel="stylesheet" href="/assets/css/admin/table.css">
+</head>
+
+<body>
+
+    <div class="d-flex min-vh-100">
+
+        <!-- Sidebar -->
+        <aside class="sidebar d-flex flex-column border-end">
+            <button class="btn-close-sidebar d-lg-none" id="closeSidebar" aria-label="Cerrar menú">
+                <i class="bi bi-x-lg"></i>
+            </button>
+
+            <div class="px-3 py-4 d-flex align-items-center gap-2 sidebar-brand border-bottom">
+                <div class="brand-icon">
+                    <i class="bi bi-shop"></i>
+                </div>
+                <div class="brand-text">
+                    <div class="fw-bold">Komercia</div>
+                    <small class="text-secondary">Panel Admin</small>
+                </div>
+            </div>
+
+            <!-- NAV LINKS -->
+            <nav class="px-3 mt-2 d-flex flex-column gap-1 sidebar-links">
+                <a href="/admin/index.html" class="sidebar-link">
+                    <i class="bi bi-speedometer2"></i><span>Dashboard</span>
+                </a>
+                <a href="/admin/comercios/comercios.html" class="sidebar-link active">
+                    <i class="bi bi-shop"></i><span>Comercios</span>
+                </a>
+                <a href="/admin/categorias/categorias.html" class="sidebar-link">
+                    <i class="bi bi-tag"></i><span>Categorías</span>
+                </a>
+                <a href="/admin/slider/slider.html" class="sidebar-link">
+                    <i class="bi bi-images"></i><span>Slider</span>
+                </a>
+            </nav>
+
+            <div class="flex-grow-1"></div>
+
+            <div class="px-3 py-3">
+                <button type="button" class="btn-logout w-100 d-flex align-items-center justify-content-center gap-2">
+                    <i class="bi bi-box-arrow-right"></i> <span>Cerrar sesión</span>
+                </button>
+            </div>
+        </aside>
+
+        <div class="main flex-grow-1 d-flex flex-column">
+
+            <!-- Topbar -->
+            <header class="topbar d-flex align-items-center justify-content-between px-3 border-bottom">
+                <button class="btn btn-icon" id="sidebarToggle"><i class="bi bi-list"></i></button>
+                <div class="user-avatar" id="userInitials">A</div>
+            </header>
+
+            <!-- PAGE CONTENT -->
+            <main class="content-wrapper flex-grow-1">
+                <div class="container-fluid py-3 py-md-4">
+                    <div class="card-surface">
+                        <!-- Breadcrumb -->
+                        <nav aria-label="breadcrumb" class="mb-3">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="/admin/comercios/">Comercios</a></li>
+                                <li class="breadcrumb-item"><a href="#">Comercio 1</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Productos</li>
+                            </ol>
+                        </nav>
+
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h1 class="h4 fw-bold m-0">Productos del Comercio</h1>
+                            <a href="form.html" class="btn btn-primary-custom">
+                                <i class="bi bi-plus-lg me-1"></i>
+                                Nuevo Producto
+                            </a>
+                        </div>
+
+                        <!-- TABLE -->
+                        <div class="responsive-table">
+                            <table class="table-custom">
+                                <thead>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Precio</th>
+                                        <th>Imagen</th>
+                                        <th class="text-end">Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Bootstrap -->
+    <script src="/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="/assets/libs/jquery/jquery-3.6.4.min.js"></script>
+    <!-- DataTables -->
+    <script src="/assets/libs/datatables/datatables.min.js"></script>
+    <script src="/assets/libs/datatables/dataTables.bootstrap5.min.js"></script>
+    <!-- Core -->
+    <script src="/assets/js/admin/core/init.js"></script>
+    <!-- Page JS -->
+    <script src="/assets/js/admin/modules/tableModule.js"></script>
+    <script src="/assets/js/admin/pages/comercio_productos.js"></script>
+    <script src="/assets/js/admin/modules/datatable.js"></script>
+</body>
+
+</html>

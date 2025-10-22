@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Komercia | Panel Admin</title>
+
+    <!-- Bootstrap -->
+    <link href="/assets/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/libs/bootstrap-icons/bootstrap-icons.css">
+    <!-- Estilos -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/admin/admin.css">
+    <link rel="stylesheet" href="/assets/css/admin/form_style.css">
+</head>
+
+<body>
+
+    <div class="d-flex min-vh-100">
+        <!-- Sidebar -->
+        <aside class="sidebar d-flex flex-column border-end">
+            <button class="btn-close-sidebar d-lg-none" id="closeSidebar">
+                <i class="bi bi-x-lg"></i>
+            </button>
+
+            <div class="px-3 py-4 d-flex align-items-center gap-2 sidebar-brand border-bottom">
+                <div class="brand-icon"><i class="bi bi-shop"></i></div>
+                <div class="brand-text">
+                    <div class="fw-bold">Komercia</div>
+                    <small class="text-secondary">Panel Admin</small>
+                </div>
+            </div>
+
+            <!-- NAV LINKS -->
+            <nav class="px-3 mt-2 d-flex flex-column gap-1 sidebar-links">
+                <a href="/admin/index.html" class="sidebar-link">
+                    <i class="bi bi-speedometer2"></i><span>Dashboard</span>
+                </a>
+                <a href="/admin/comercios/comercios.html" class="sidebar-link active">
+                    <i class="bi bi-shop"></i><span>Comercios</span>
+                </a>
+                <a href="/admin/categorias/categorias.html" class="sidebar-link">
+                    <i class="bi bi-tag"></i><span>Categorías</span>
+                </a>
+                <a href="/admin/slider/slider.html" class="sidebar-link">
+                    <i class="bi bi-images"></i><span>Slider</span>
+                </a>
+            </nav>
+
+            <div class="flex-grow-1"></div>
+
+            <div class="px-3 py-3">
+                <button type="button" class="btn-logout w-100 d-flex align-items-center justify-content-center gap-2">
+                    <i class="bi bi-box-arrow-right"></i> <span>Cerrar sesión</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main -->
+        <div class="main flex-grow-1 d-flex flex-column">
+
+            <!-- Topbar -->
+            <header class="topbar d-flex align-items-center justify-content-between px-3 border-bottom">
+                <button class="btn btn-icon" id="sidebarToggle">
+                    <i class="bi bi-list fs-5"></i>
+                </button>
+
+                <div class="d-flex align-items-center gap-2">
+                    <div class="user-avatar" id="userInitials"></div>
+                </div>
+            </header>
+
+            <!-- CONTENT -->
+            <main class="content-wrapper flex-grow-1">
+                <div class="container-fluid py-3 py-md-4">
+
+                    <div class="d-flex align-items-center gap-2 mb-3">
+                        <a href="/admin/comercios/index.html" class="btn btn-light btn-back rounded-pill px-3">
+                            <i class="bi bi-arrow-left"></i>
+                        </a>
+                        <h1 class="h4 m-0 fw-bold">Galería del Comercio</h1>
+                    </div>
+
+                    <!-- Breadcrumb -->
+                    <nav aria-label="breadcrumb" class="mb-3">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/admin/comercios/index.html">Comercios</a></li>
+                            <li class="breadcrumb-item"><a href="/admin/comercios/index.html">Comercio 1</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Galería</li>
+                        </ol>
+                    </nav>
+
+                    <!-- GALERÍA -->
+                    <section class="card-surface p-3 p-md-4 mb-3">
+                        <h6 class="section-heading"><i class="bi bi-images me-2"></i>Imágenes del Comercio</h6>
+
+                        <small class="text-secondary">
+                            Formatos permitidos: JPG/PNG · Tamaño recomendado: 2MB por imagen
+                        </small>
+
+                        <div id="galleryDrop" class="dropzone mt-3">
+                            <div class="dz-icon"><i class="bi bi-cloud-arrow-up"></i></div>
+                            <p class="mb-2">Arrastra imágenes aquí o haz clic para seleccionar</p>
+                            <button class="btn btn-light" type="button" id="btnPickGallery">Seleccionar
+                                Imágenes</button>
+                            <input type="file" id="galleryInput" multiple accept="image/*" class="d-none">
+                        </div>
+
+                        <!-- Placeholder -->
+                        <div id="galleryEmpty" class="text-center text-secondary mt-4">
+                            <i class="bi bi-image fs-1 d-block mb-2"></i>
+                            No hay imágenes en la galería todavía.
+                        </div>
+
+                        <div id="galleryGrid" class="thumb-grid mt-3"></div>
+                    </section>
+
+                    <!-- BOTONES -->
+                    <div class="d-flex justify-content-end gap-2">
+                        <a href="/admin/comercios/form.html" class="btn btn-light">Cancelar</a>
+                        <button type="button" id="btnSaveGallery" class="btn btn-primary-custom">Guardar
+                            cambios</button>
+                    </div>
+
+                </div>
+            </main>
+
+            <footer class="admin-footer text-center border-top py-3 px-3">
+                © 2025 Komercia · Panel Administrativo · Todos los derechos reservados
+            </footer>
+        </div>
+    </div>
+
+    <!-- Bootstrap -->
+    <script src="/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="/assets/libs/jquery/jquery-3.6.4.min.js"></script>
+
+    <!-- Core -->
+    <script src="/assets/js/admin/core/init.js"></script>
+
+    <!-- Modules -->
+    <script src="/assets/js/admin/modules/gallery.js"></script>
+
+    <!-- Page -->
+    <script src="/assets/js/admin/pages/comercio_galeria.js"></script>
+
+</body>
+
+</html>

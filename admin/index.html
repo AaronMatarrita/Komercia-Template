@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Komercia | Panel Admin</title>
+
+    <!-- Bootstrap -->
+    <link href="/assets/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/libs/bootstrap-icons/bootstrap-icons.css">
+    <!-- Librerías de animación -->
+    <link href="/assets/libs/aos/aos.css" rel="stylesheet">
+    <!-- Slick -->
+    <link rel="stylesheet" href="/assets/libs/slick/slick.css">
+    <link rel="stylesheet" href="/assets/libs/slick/slick-theme.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/comercio_detalle.css">
+    <link rel="stylesheet" href="/assets/css/admin/admin.css">
+</head>
+
+<body>
+
+    <!-- Added overlay for mobile sidebar -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <div class="d-flex min-vh-100">
+        <!-- Sidebar -->
+        <aside class="sidebar d-flex flex-column border-end">
+            <!-- Improved close button with better accessibility -->
+            <button class="btn-close-sidebar d-lg-none" id="closeSidebar" aria-label="Cerrar menú">
+                <i class="bi bi-x-lg"></i>
+            </button>
+            <!-- Brand -->
+            <div class="px-3 py-4 d-flex align-items-center gap-2 sidebar-brand border-bottom">
+                <div class="brand-icon">
+                    <i class="bi bi-shop"></i>
+                </div>
+                <div class="brand-text">
+                    <div class="fw-bold">Komercia</div>
+                    <small class="text-secondary">Panel Admin</small>
+                </div>
+            </div>
+
+            <!-- NAV LINKS -->
+            <nav class="px-3 mt-2 d-flex flex-column gap-1 sidebar-links">
+                <a href="/admin/index.html" class="sidebar-link active">
+                    <i class="bi bi-speedometer2"></i><span>Dashboard</span>
+                </a>
+                <a href="/admin/comercios/comercios.html" class="sidebar-link">
+                    <i class="bi bi-shop"></i><span>Comercios</span>
+                </a>
+                <a href="/admin/categorias/categorias.html" class="sidebar-link">
+                    <i class="bi bi-tag"></i><span>Categorías</span>
+                </a>
+                <a href="/admin/slider/slider.html" class="sidebar-link">
+                    <i class="bi bi-images"></i><span>Slider</span>
+                </a>
+            </nav>
+
+            <!-- Spacer -->
+            <div class="flex-grow-1"></div>
+
+            <!-- Logout -->
+            <div class="px-3 py-3">
+                <button type="button" class="btn-logout w-100 d-flex align-items-center justify-content-center gap-2">
+                    <i class="bi bi-box-arrow-right"></i> <span>Cerrar sesión</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main -->
+        <div class="main flex-grow-1 d-flex flex-column">
+            <!-- Topbar -->
+            <header class="topbar d-flex align-items-center justify-content-between px-3 border-bottom">
+                <!-- Enhanced toggle button with better accessibility and visual feedback -->
+                <button class="btn btn-icon d-inline-flex align-items-center justify-content-center" id="sidebarToggle"
+                    aria-label="Alternar menú" aria-expanded="true" aria-controls="sidebar">
+                    <i class="bi bi-list fs-5"></i>
+                </button>
+
+                <div class="d-flex align-items-center gap-2">
+                    <div class="user-avatar" id="userInitials" aria-label="Iniciales del usuario"></div>
+                </div>
+            </header>
+
+            <!-- Page content -->
+            <main class="content-wrapper flex-grow-1">
+                <div class="container-fluid py-3 py-md-4">
+                    <!-- Page Heading -->
+                    <div class="d-flex align-items-center justify-content-between mb-3 mb-md-4">
+                        <h1 class="h3 m-0 text-dark-emphasis page-title">Dashboard</h1>
+                    </div>
+
+                    <!-- Row 1: (stats) -->
+                    <div class="row g-3 g-md-4">
+                        <!-- Comercios -->
+                        <div class="col-12 col-sm-6 col-lg-3">
+                            <section class="card-surface d-flex justify-content-between align-items-start">
+                                <div>
+                                    <p class="stat-title">Comercios</p>
+                                    <h2 class="stat-value">156</h2>
+                                </div>
+                                <div class="stat-icon icon-orange">
+                                    <i class="bi bi-shop"></i>
+                                </div>
+                            </section>
+                        </div>
+
+                        <!-- Categorías -->
+                        <div class="col-12 col-sm-6 col-lg-3">
+                            <section class="card-surface d-flex justify-content-between align-items-start">
+                                <div>
+                                    <p class="stat-title">Categorías</p>
+                                    <h2 class="stat-value">24</h2>
+                                </div>
+                                <div class="stat-icon icon-blue">
+                                    <i class="bi bi-tag"></i>
+                                </div>
+                            </section>
+                        </div>
+
+                        <!-- Productos -->
+                        <div class="col-12 col-sm-6 col-lg-3">
+                            <section class="card-surface d-flex justify-content-between align-items-start">
+                                <div>
+                                    <p class="stat-title">Productos</p>
+                                    <h2 class="stat-value">1248</h2>
+                                </div>
+                                <div class="stat-icon icon-green">
+                                    <i class="bi bi-box-seam"></i>
+                                </div>
+                            </section>
+                        </div>
+
+                        <!-- Slider -->
+                        <div class="col-12 col-sm-6 col-lg-3">
+                            <section class="card-surface d-flex justify-content-between align-items-start">
+                                <div>
+                                    <p class="stat-title">Slider</p>
+                                    <h2 class="stat-value">8</h2>
+                                </div>
+                                <div class="stat-icon icon-yellow">
+                                    <i class="bi bi-images"></i>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+
+                    <!-- Row 2: Comercios recientes / por categoría -->
+                    <div class="row g-3 g-md-4 mt-1 mt-md-2">
+
+                        <!-- Comercios Recientes -->
+                        <div class="col-12 col-lg-4">
+                            <section class="card-surface p-3 p-md-4 h-100 text-start">
+                                <div class="d-flex align-items-center gap-2 mb-3">
+                                    <div class="stat-icon icon-orange">
+                                        <i class="bi bi-buildings"></i>
+                                    </div>
+                                    <h5 class="m-0 fw-semibold">Comercios Recientes</h5>
+                                </div>
+
+                                <div class="comercio-item d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="fw-semibold mb-1">Restaurante Crickesio</h6>
+                                        <span class="comercio-category">
+                                            <i class="bi bi-cup-hot"></i> Restaurante
+                                        </span>
+                                    </div>
+                                    <span class="text-secondary small">2024-01-15</span>
+                                </div>
+
+                                <div class="comercio-item d-flex justify-content-between align-items-center mb-3">
+                                    <div>
+                                        <h6 class="fw-semibold mb-1">Hotel El Cricko</h6>
+                                        <span class="comercio-category">
+                                            <i class="bi bi-building"></i> Hotel
+                                        </span>
+                                    </div>
+                                    <span class="text-secondary small">2024-01-14</span>
+                                </div>
+
+                                <div class="comercio-item d-flex justify-content-between align-items-center mb-3">
+                                    <div>
+                                        <h6 class="fw-semibold mb-1">Zapatería La Martha</h6>
+                                        <span class="comercio-category">
+                                            <i class="bi bi-bag"></i> Zapatería
+                                        </span>
+                                    </div>
+                                    <span class="text-secondary small">2024-01-13</span>
+                                </div>
+
+                                <div class="comercio-item d-flex justify-content-between align-items-center mb-3">
+                                    <div>
+                                        <h6 class="fw-semibold mb-1">Café Central</h6>
+                                        <span class="comercio-category">
+                                            <i class="bi bi-cup-hot"></i> Restaurante
+                                        </span>
+                                    </div>
+                                    <span class="text-secondary small">2024-01-12</span>
+                                </div>
+
+                                <div class="comercio-item d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="fw-semibold mb-1">Tech Store</h6>
+                                        <span class="comercio-category">
+                                            <i class="bi bi-laptop"></i> Tecnología
+                                        </span>
+                                    </div>
+                                    <span class="text-secondary small">2024-01-11</span>
+                                </div>
+                            </section>
+                        </div>
+
+                        <!-- Comercios por Categoría -->
+                        <div class="col-12 col-lg-8">
+                            <section class="card-surface p-3 p-md-4 h-100">
+
+                            </section>
+                        </div>
+                    </div>
+
+                </div>
+            </main>
+
+            <!-- Footer -->
+            <footer class="admin-footer text-center border-top py-3 px-3">
+                © 2025 Komercia · Panel Administrativo · Todos los derechos reservados
+            </footer>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="/assets/libs/jquery/jquery-3.6.4.min.js"></script>
+    <!-- Script principal -->
+    <script src="/assets/js/admin/core/init.js"></script>
+
+</body>
+
+</html>

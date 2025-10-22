@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Komercia | Nuevo Producto</title>
+
+    <!-- Bootstrap -->
+    <link href="/assets/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/libs/bootstrap-icons/bootstrap-icons.css">
+
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/comercio_detalle.css">
+    <link rel="stylesheet" href="/assets/css/admin/admin.css">
+    <link rel="stylesheet" href="/assets/css/admin/form_style.css">
+</head>
+
+<body>
+
+    <div class="d-flex min-vh-100">
+
+        <!-- Sidebar -->
+        <aside class="sidebar d-flex flex-column border-end">
+            <button class="btn-close-sidebar d-lg-none" id="closeSidebar">
+                <i class="bi bi-x-lg"></i>
+            </button>
+
+            <div class="px-3 py-4 d-flex align-items-center gap-2 sidebar-brand border-bottom">
+                <div class="brand-icon">
+                    <i class="bi bi-shop"></i>
+                </div>
+                <div class="brand-text">
+                    <div class="fw-bold">Komercia</div>
+                    <small class="text-secondary">Panel Admin</small>
+                </div>
+            </div>
+
+            <!-- NAV LINKS -->
+            <nav class="px-3 mt-2 d-flex flex-column gap-1 sidebar-links">
+                <a href="/admin/index.html" class="sidebar-link">
+                    <i class="bi bi-speedometer2"></i><span>Dashboard</span>
+                </a>
+                <a href="/admin/comercios/comercios.html" class="sidebar-link active">
+                    <i class="bi bi-shop"></i><span>Comercios</span>
+                </a>
+                <a href="/admin/categorias/categorias.html" class="sidebar-link">
+                    <i class="bi bi-tag"></i><span>Categorías</span>
+                </a>
+                <a href="/admin/slider/slider.html" class="sidebar-link">
+                    <i class="bi bi-images"></i><span>Slider</span>
+                </a>
+            </nav>
+
+            <div class="flex-grow-1"></div>
+
+            <div class="px-3 py-3">
+                <button type="button" class="btn-logout w-100 d-flex align-items-center justify-content-center gap-2">
+                    <i class="bi bi-box-arrow-right"></i> <span>Cerrar sesión</span>
+                </button>
+            </div>
+        </aside>
+
+        <div class="main flex-grow-1 d-flex flex-column">
+
+            <!-- Topbar -->
+            <header class="topbar d-flex align-items-center justify-content-between px-3 border-bottom">
+                <button class="btn btn-icon" id="sidebarToggle"><i class="bi bi-list"></i></button>
+                <div class="user-avatar" id="userInitials"></div>
+            </header>
+
+            <!-- PAGE CONTENT -->
+            <main class="content-wrapper flex-grow-1">
+                <div class="container-fluid py-3 py-md-4">
+
+                    <div class="d-flex align-items-center gap-2 mb-3">
+                        <a href="/admin/productos/productos.html" class="btn btn-light btn-back rounded-pill px-3">
+                            <i class="bi bi-arrow-left"></i>
+                        </a>
+                        <h1 class="h4 m-0 fw-bold">Nuevo Producto</h1>
+                    </div>
+
+                    <!-- FORM -->
+                    <form id="productoForm" action="#" method="POST" enctype="multipart/form-data" novalidate>
+
+                        <input type="hidden" name="comercio_id" value="1">
+
+                        <!-- INFORMACIÓN BÁSICA -->
+                        <section class="card-surface p-3 p-md-4 mb-3">
+                            <h6 class="section-heading">
+                                <i class="bi bi-info-circle me-2"></i>Información del Producto
+                            </h6>
+
+                            <div class="row g-3">
+                                <div class="col-12 col-md-8">
+                                    <div class="form-group">
+                                        <label class="form-label">Nombre *</label>
+                                        <input type="text" class="form-control" name="nombre"
+                                            placeholder="Ej: Pizza Especial" required>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 col-md-4">
+                                    <label class="form-label">Precio *</label>
+                                    <input type="number" step="0.01" min="0" class="form-control" name="precio"
+                                        placeholder="0.00" required>
+                                </div>
+
+                                <div class="col-12">
+                                    <label class="form-label">Descripción</label>
+                                    <textarea name="descripcion" rows="3" class="form-control"
+                                        placeholder="Describe este producto..."></textarea>
+                                </div>
+
+                                <div class="col-12">
+                                    <label class="form-label">Imagen *</label>
+                                    <div class="img-thumb" id="productThumb">
+                                        <i class="bi bi-image"></i>
+                                    </div>
+                                    <input class="form-control mt-2" type="file" id="productImage"
+                                        name="dsc_imagen_destacada" accept="image/*" required>
+                                    <small class="text-secondary">PNG/JPG, máx. 2MB — Ideal: 1920×600</small>
+                                    <div class="invalid-feedback">Selecciona una imagen para el slider.</div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- BOTONES -->
+                        <div class="d-flex align-items-center justify-content-end gap-2">
+                            <a href="/admin/productos/productos.html" class="btn btn-light">Cancelar</a>
+                            <button type="submit" class="btn btn-primary-custom">Guardar Producto</button>
+                        </div>
+
+                    </form>
+                </div>
+            </main>
+
+        </div>
+    </div>
+
+    <!-- Bootstrap -->
+    <script src="/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="/assets/libs/jquery/jquery-3.6.4.min.js"></script>
+    <!-- Modules -->
+    <script src="/assets/js/admin/modules/gallery.js"></script>
+    <!-- Core -->
+    <script src="/assets/js/admin/core/init.js"></script>
+    <!-- Page JS -->
+    <script src="/assets/js/admin/pages/producto_form.js"></script>
+
+</body>
+
+</html>
